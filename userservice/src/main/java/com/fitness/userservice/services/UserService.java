@@ -38,4 +38,18 @@ public class UserService {
         return UserResponse;
 
     }
+
+    public UserResponse getUserProfile(String userId) {
+        User user = repository.findById((userId))
+                .orElseThrow(() -> new RuntimeException("User not found"));
+        UserResponse UserResponse = new UserResponse();
+        UserResponse.setId(user.getId());
+        UserResponse.setPassword(user.getPassword());
+        UserResponse.setEmail(user.getEmail());
+        UserResponse.setFirstName(user.getFirstName());
+        UserResponse.setLastName(user.getLastName());
+        UserResponse.setCreatedAt(user.getCreatedAt());
+        UserResponse.setUpdatedAt(user.getUpdatedAt());
+        return UserResponse;
+    }
 }

@@ -3,7 +3,7 @@ spring:
     name: activityservice
   data:
     mongodb:
-      uri: mongodb://localjost:27017
+      uri: mongodb://localjost:27017/aiactivityfitness
       database: aiactivityfitness
 
 eureka:

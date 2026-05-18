@@ -6,6 +6,21 @@ spring:
       uri: mongodb://localjost:27017/airecommendationfitnessdb
       database: airecommendationfitnessdb
 
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: activity-processor-group
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        pring.json.use.type.headers: false
+        spring.json.value.default.type: <>
+        spring.json.trusted.packages: "*"
+
+kafka:
+  topic:
+    name: activity-events
+
 eureka:
     client:
       service-url:

@@ -6,7 +6,15 @@ eureka:
     prefer-ip-address: true
     ip-address: 127.0.0.1
     hostname: localhost
+
 spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8181/realms/master/protocol/openid-connect/certs
+
+
   cloud:
     gateway:
       server:

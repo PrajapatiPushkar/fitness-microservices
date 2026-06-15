@@ -35,6 +35,7 @@ public class UserService {
         user.setEmail(request.getEmail());
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
+        user.setKeycloakId(request.getKeycloakId());
         user.setPassword(request.getPassword());
 
         User savedUser = repository.save(user);
@@ -44,6 +45,7 @@ public class UserService {
         UserResponse.setEmail(savedUser.getEmail());
         UserResponse.setFirstName(savedUser.getFirstName());
         UserResponse.setLastName(savedUser.getLastName());
+        UserResponse.setKeycloakId(savedUser.getKeycloakId());
         UserResponse.setCreatedAt(savedUser.getCreatedAt());
         UserResponse.setUpdatedAt(savedUser.getUpdatedAt());
         return UserResponse;
